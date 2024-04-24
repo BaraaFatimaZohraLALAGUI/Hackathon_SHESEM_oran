@@ -10,8 +10,8 @@ Widget buildTextField(TextEditingController controller, String label, String hin
         Text(
           label,
           style: const TextStyle(
-            fontFamily: 'Arslan',
-            fontSize: 22,
+            fontFamily: 'Baloo',
+            fontSize: 16,
             fontWeight: FontWeight.bold
           ),
         ),
@@ -19,12 +19,12 @@ Widget buildTextField(TextEditingController controller, String label, String hin
           width: 317,
           height: 55,
           child: TextField(
-            style: const TextStyle(color: Colors.grey ,fontSize: 16, fontFamily: 'Arslan'),
+            style: const TextStyle(color: Colors.grey, fontSize: 16, fontFamily: 'Baloo'),
             controller: controller,
             textAlignVertical: TextAlignVertical.bottom,
             decoration: InputDecoration(
               hintText: hint,
-              hintStyle: const TextStyle(fontSize: 20),
+              hintStyle: const TextStyle(fontSize: 16),
               prefixIcon: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: ImageIcon(
@@ -32,8 +32,7 @@ Widget buildTextField(TextEditingController controller, String label, String hin
                   size: 22,
                 ),
               ),
-              contentPadding: const EdgeInsets.all(10.0), 
-              floatingLabelBehavior: FloatingLabelBehavior.never,
+              contentPadding: const EdgeInsets.all(20.0),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide: const BorderSide(color: Color(0xFFB2A4FF), width: 5.0),
