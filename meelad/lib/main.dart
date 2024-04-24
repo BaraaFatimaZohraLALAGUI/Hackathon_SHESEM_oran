@@ -1,45 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:meelad/widgets/textfield.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Meelad',
-      theme: ThemeData()
+      theme: ThemeData(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late TextEditingController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TextEditingController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Meelad'),
+      ),
       body: Center(
-        
         child: Column(
-      
           mainAxisAlignment: MainAxisAlignment.center,
-          children:[
-
+          children: [
+            buildTextField(controller, 'رقم الهاتف', '+21300000000', 'assets/icons/phone.png'),
+            const SizedBox(height: 20),
+            const Text('Other widgets go here'),
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }
