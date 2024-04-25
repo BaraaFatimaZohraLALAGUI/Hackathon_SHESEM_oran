@@ -7,7 +7,7 @@ class Landingpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Landing Page'),
+        title: const Text('Landing Page'),
         leading: Image.asset(
             'assets/images/logo.png'), // Add your left image asset path here
         actions: [

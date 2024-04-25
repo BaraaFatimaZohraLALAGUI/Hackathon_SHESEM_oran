@@ -4,7 +4,7 @@ import 'package:meelad/widgets/textfield.dart';
 import 'package:meelad/widgets/uploadfile.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meelad'),
+        title: const Text('Meelad'),
       ),
       body: Center(
         child: Column(
@@ -48,8 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             // Use buildTextField function from textfield.dart
             buildTextField(controller, 'رقم الهاتف', '+21300000000', 'assets/icons/phone.png'),
-            SizedBox(height: 20),
-            Text('Other widgets go here'),
+            const SizedBox(height: 20),
+            const Text('Other widgets go here'),
             // Use buildUploadDocument function from uploadfile.dart
             buildUploadDocument('hint', 'label', 'docs/files', (bool success) {
               if (success) {
