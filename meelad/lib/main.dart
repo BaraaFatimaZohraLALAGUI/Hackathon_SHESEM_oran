@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meelad/screens/landingpage.dart';
 import 'package:meelad/widgets/textfield.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Meelad',
       theme: ThemeData(),
-      home: const MyHomePage(),
+      home: const Landingpage(),
     );
   }
 }
@@ -44,7 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            buildTextField(controller, 'رقم الهاتف', '+21300000000', 'assets/icons/phone.png'),
+            buildTextField(controller, 'رقم الهاتف', '+21300000000',
+                'assets/icons/phone.png'),
             const SizedBox(height: 20),
             const Text('Other widgets go here'),
           ],
