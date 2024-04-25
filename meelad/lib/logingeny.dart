@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meelad/widgets/textfield.dart';
+import 'package:meelad/widgets/uploadfile.dart';
 
 class LoginGeny extends StatefulWidget {
   const LoginGeny({super.key});
@@ -37,6 +38,13 @@ late TextEditingController passwordController;
               buildTextField(addController, ' عنوان العمل', 'مصلحة النساء و التوليد', 'assets/icons/select icon.png'),
               buildTextField(nameController, 'الاسم الكامل', 'د. اسم', 'assets/icons/user icon.png'),
               buildTextField(passwordController, 'كلمة المرور ', '*********', 'assets/icons/lock icon.png'),
+              buildUploadDocument('شهادة ', 'شهادة ','docs/files', (bool success) {
+              if (success) {
+                print('File Uploaded successfully');
+              } else {
+                print('failed to upload file');
+              }
+            }),
             ],
           ),
         )
