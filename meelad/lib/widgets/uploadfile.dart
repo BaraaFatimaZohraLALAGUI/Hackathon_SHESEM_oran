@@ -38,10 +38,10 @@ Widget buildUploadDocument(String hint, String label, String uploadURL, Function
     ),
   );
 
-}
+// }
 
-Future <void> _pickAndUploadFile(String uploadURL, Function(bool) onUploadStatusChange,) async {
-  FilePickerResult? result = await FilePicker.platform.pickFiles();
+// Future <void> _pickAndUploadFile(String uploadURL, Function(bool) onUploadStatusChange,) async {
+//   FilePickerResult? result = await FilePicker.platform.pickFiles();
 
   if(result != null) {
     PlatformFile file = result.files.first;

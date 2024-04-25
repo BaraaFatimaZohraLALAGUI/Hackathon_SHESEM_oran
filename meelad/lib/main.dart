@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meelad/screens/landingpage.dart';
 import 'package:meelad/widgets/textfield.dart';
 import 'package:meelad/widgets/uploadfile.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Meelad',
       theme: ThemeData(),
-      home: MyHomePage(),
+      home: const Landingpage(),
     );
   }
 }
