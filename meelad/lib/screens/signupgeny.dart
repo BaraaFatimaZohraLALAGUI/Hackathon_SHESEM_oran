@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:meelad/widgets/textfield.dart';
+import 'package:meelad/widgets/uploadfile.dart';
 
-class LoginGeny extends StatefulWidget {
-  const LoginGeny({super.key});
+class SignupGeny extends StatefulWidget {
+  const SignupGeny({super.key});
 
   @override
-  State<LoginGeny> createState() => _LoginState();
+  State<SignupGeny> createState() => _SignupGenyState();
 }
 
-class _LoginState extends State<LoginGeny> {
+class _SignupGenyState extends State<SignupGeny> {
 late TextEditingController phoneController;
 late TextEditingController sectorController;
 late TextEditingController addController;
@@ -37,6 +38,14 @@ late TextEditingController passwordController;
               buildTextField(addController, ' عنوان العمل', 'مصلحة النساء و التوليد', 'assets/icons/select icon.png'),
               buildTextField(nameController, 'الاسم الكامل', 'د. اسم', 'assets/icons/user icon.png'),
               buildTextField(passwordController, 'كلمة المرور ', '*********', 'assets/icons/lock icon.png'),
+              buildUploadDocument('شهادة ', 'تحميل الشهادة','docs/files', (bool success) {
+              if (success) {
+                print('File Uploaded successfully');
+              } else {
+                print('failed to upload file');
+              }
+            }),
+            ElevatedButton(onPressed: () {}, child: const Text('التالي'))
             ],
           ),
         )
