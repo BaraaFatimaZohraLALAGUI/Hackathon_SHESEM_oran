@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:meelad/widgets/textfield.dart';
+import 'package:meelad/widgets/uploadfile.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Meelad',
       theme: ThemeData(),
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -38,15 +39,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Meelad'),
+        title: Text('Meelad'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Use buildTextField function from textfield.dart
             buildTextField(controller, 'رقم الهاتف', '+21300000000', 'assets/icons/phone.png'),
-            const SizedBox(height: 20),
-            const Text('Other widgets go here'),
+            SizedBox(height: 20),
+            Text('Other widgets go here'),
+            // Use buildUploadDocument function from uploadfile.dart
+            buildUploadDocument('hint', 'label', 'docs/files', (bool success) {
+              if (success) {
+                print('File Uploaded successfully');
+              } else {
+                print('failed to upload file');
+              }
+            }),
           ],
         ),
       ),
